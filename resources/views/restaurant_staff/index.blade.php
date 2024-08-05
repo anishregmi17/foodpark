@@ -28,7 +28,7 @@
                             <td class="text-center">
                                 @if ($staffMember->profile_image)
                                     <img src="{{ asset($staffMember->profile_image) }}" class="rounded-circle"
-                                        alt="{{ $staffMember->name }}" style="width: 100px; height: 100px;">
+                                        alt="{{ $staffMember->name }}" style="width: 90px; height: 90px;">
                                 @else
                                     <img src="{{ asset('images/default-profile.png') }}" class="rounded-circle"
                                         alt="Default Profile Image" style="width: 120px; height: 120px;">

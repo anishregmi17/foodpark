@@ -3,7 +3,7 @@
 @section('content')
     <div class="container">
         <div class="invoice-box mt-3"
-            style="width: 100%; max-width: 800px; margin: auto; padding: 30px; border: 1px solid #ccc; box-shadow: 0 0 10px rgba(0, 0, 0, 0.15); font-size: 16px; line-height: 24px; font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; color: #555; background-color: #fff;">
+            style="width: 100%; max-width: 800px; margin: auto; padding: 30px; border: 1px solid #ccc; box-shadow: 0 0 10px rgba(0, 0, 0, 0.15); font-size: 16px; line-height: 24px; font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; color: #555; background-color: #e6f7e6;">
             <div class="invoice-header" style="text-align: center; margin-bottom: 20px;">
                 <h1>PNC Food Park</h1>
                 <h6>Invoice #{{ $invoice->id }}</h6>
