@@ -15,7 +15,7 @@
             <table class="table table-bordered table-striped">
                 <thead class="thead-dark">
                     <tr>
-                        <th>Profile Image</th>
+                        <th>Profile</th>
                         <th>Name</th>
                         <th>Role</th>
                         <th>Contact</th>
