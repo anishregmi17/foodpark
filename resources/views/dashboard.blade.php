@@ -25,7 +25,7 @@
                     <div class="card bg-primary text-white shadow rounded-lg h-100">
                         <div class="card-body d-flex flex-column">
                             <h5 class="card-title font-weight-bold">Staff Management</h5>
-                            <p class="card-text flex-grow-1">Manage your restaurant staff efficiently -Anish Regmi</p>
+                            <p class="card-text flex-grow-1">Manage your restaurant staff efficiently</p>
                         </div>
                     </div>
                 </div>
