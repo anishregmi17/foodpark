@@ -11,49 +11,57 @@
             </div>
         @endif
 
-        <div class="table-responsive">
-            <table class="table table-bordered table-striped">
-                <thead class="thead-dark">
-                    <tr>
-                        <th>ID</th>
-                        <th>Food Ordering ID</th>
-                        <th>Customer Name</th>
-                        <th>Amount</th>
-                        <th>Status</th>
-                        <th>Actions</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach ($invoices as $invoice)
-                        <tr>
-                            <td>{{ $invoice->id }}</td>
-                            <td>{{ $invoice->foodOrdering->id }}</td>
-                            <td>{{ $invoice->foodOrdering->customer->name }}</td>
-                            <td>Nrs {{ $invoice->foodOrdering->foodItem->price * $invoice->foodOrdering->quantity * 1.13 }}
-                            </td>
-                            <td>
-                                @if ($invoice->status == 'paid')
-                                    <span class="badge badge-success">Paid</span>
-                                @else
-                                    <span class="badge badge-warning">Unpaid</span>
-                                @endif
-                            </td>
-                            <td>
-                                <a href="{{ route('invoices.show', $invoice->id) }}" class="btn btn-info btn-sm">Invoice
-                                    Detail+Print</a>
-                                <a href="{{ route('invoices.edit', $invoice->id) }}" class="btn btn-warning btn-sm">Edit</a>
-                                <form action="{{ route('invoices.destroy', $invoice->id) }}" method="POST"
-                                    style="display:inline;">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button type="submit" class="btn btn-danger btn-sm"
-                                        onclick="return confirm('Are you sure?')">Delete</button>
-                                </form>
-                            </td>
-                        </tr>
-                    @endforeach
-                </tbody>
-            </table>
+        <div class="card">
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-bordered table-striped">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th>ID</th>
+                                <th>Food Ordering ID</th>
+                                <th>Customer Name</th>
+                                <th>Amount</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach ($invoices as $invoice)
+                                <tr>
+                                    <td>{{ $invoice->id }}</td>
+                                    <td>{{ $invoice->foodOrdering->id }}</td>
+                                    <td>{{ $invoice->foodOrdering->customer->name }}</td>
+                                    <td>Nrs
+                                        {{ $invoice->foodOrdering->foodItem->price * $invoice->foodOrdering->quantity * 1.13 }}
+                                    </td>
+                                    <td>
+                                        @if ($invoice->status == 'paid')
+                                            <span class="badge badge-success">Paid</span>
+                                        @else
+                                            <span class="badge badge-warning">Unpaid</span>
+                                        @endif
+                                    </td>
+                                    <td>
+                                        <div class="btn-group" role="group">
+                                            <a href="{{ route('invoices.show', $invoice->id) }}"
+                                                class="btn btn-info btn-sm">Invoice Detail+Print</a>
+                                            <a href="{{ route('invoices.edit', $invoice->id) }}"
+                                                class="btn btn-warning btn-sm">Edit</a>
+                                            <form action="{{ route('invoices.destroy', $invoice->id) }}" method="POST"
+                                                style="display: inline;">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button type="submit" class="btn btn-danger btn-sm"
+                                                    onclick="return confirm('Are you sure?')">Delete</button>
+                                            </form>
+                                        </div>
+                                    </td>
+                                </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </div>
     </div>
 @endsection
