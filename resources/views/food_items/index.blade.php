@@ -48,8 +48,11 @@
                                         @endif
                                     </td>
                                     <td>
+                                        {{-- @can('update', $foodItem) --}}
                                         <a href="{{ route('food-items.edit', $foodItem->id) }}"
                                             class="btn btn-warning btn-sm">Edit</a>
+                                        {{-- @endcan --}}
+
                                         <form action="{{ route('food-items.destroy', $foodItem->id) }}" method="POST"
                                             style="display: inline;">
                                             @csrf

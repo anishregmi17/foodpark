@@ -5,9 +5,13 @@ namespace App\Http\Controllers;
 use App\Models\FoodItem;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
+
 
 class FoodItemController extends Controller
 {
+    use AuthorizesRequests;
+
     public function index()
     {
         $foodItems = FoodItem::all();
@@ -51,6 +55,8 @@ class FoodItemController extends Controller
 
     public function update(Request $request, FoodItem $foodItem)
     {
+        $this->authorize('update', $foodItem);
+
         $validated = $request->validate([
             'name' => 'required',
             'description' => 'required',
