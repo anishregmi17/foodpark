@@ -27,7 +27,9 @@ class JobPosted extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: 'Job Posted',
+            subject: 'PNC FOOD PARK',
+            from: 'anishregminaglibang@gmail.com',
+            to: 'regmianish.xdezo@gmail.com'
         );
     }
 
