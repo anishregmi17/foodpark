@@ -26,3 +26,11 @@ Route::resource('food-deliverings', FoodDeliveringController::class);
 Route::get('/invoices/{id}/amount', [InvoiceController::class, 'getInvoiceAmount']);
 
 Route::get('/food-orderings/{id}/amount', 'FoodOrderingController@getAmount');
+
+// for local system mail
+Route::get('test', function () {
+    \Illuminate\Support\Facades\Mail::to('remgianish.xdezo@gmail.com')->send(
+        new \App\Mail\JobPosted()
+    );
+    return 'done';
+});
